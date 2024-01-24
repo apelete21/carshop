@@ -1,7 +1,7 @@
-import { HiOutlineUserCircle  } from "react-icons/hi";
+import { HiOutlineUserCircle } from "react-icons/hi";
 import { Button, Navbar } from "flowbite-react";
 import { NextRouter, useRouter } from "next/router";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 type Props = {};
 type NavlinkProps = {
@@ -13,7 +13,11 @@ const Navlink = ({ href, children }: NavlinkProps) => {
   const router: NextRouter = useRouter();
 
   return (
-    <Navbar.Link className='duration-200' href={href} active={router.asPath == href}>
+    <Navbar.Link
+      className="duration-200"
+      href={href}
+      active={router.asPath == href}
+    >
       {children}
     </Navbar.Link>
   );
@@ -21,7 +25,7 @@ const Navlink = ({ href, children }: NavlinkProps) => {
 
 export function Nav({}: Props) {
   return (
-    <div className="w-screen absolute top-0 overflow-x-hidden z-40">
+    <div className="w-full fixed top-0 overflow-x-hidden z-40">
       <Navbar
         fluid={true}
         rounded={true}
