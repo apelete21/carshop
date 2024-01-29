@@ -16,7 +16,7 @@ export default function ({}: Props) {
           <div className="relaive hero-bg">
             <div className="w-full h-full absolute top-0 -z-[0] hero-dark-layer" />
             <div
-              className={`h-screen w-screen flex flex-col items-center justify-center gap-[11%] text-white relative`}
+              className={`h-screen w-screen flex flex-col items-center justify-center gap-[11%] text-white relative pt-20`}
             >
               <p className="font-light text-xs">
                 Welcome, hope you’ll get satisfied about all your needs, if not,

@@ -20,18 +20,19 @@
 
 body {
   overflow-x: hidden;
-  background: #0009;
+  background: rgb(0, 0, 0);
+  color: white;
 }
 
 .hero-bg {
-  background:  url('/img/home1.png');
+  background: url("/img/home1.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .hero-dark-layer {
-  background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85));
+  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85));
 }
 
 @layer utilities {

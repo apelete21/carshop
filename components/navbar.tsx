@@ -2,10 +2,12 @@ import { HiOutlineUserCircle } from "react-icons/hi";
 import { Button, Navbar } from "flowbite-react";
 import { NextRouter, useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import { Url } from "url";
 
 type Props = {};
 type NavlinkProps = {
-  href?: string;
+  href: Url | string;
   children: string;
 };
 
@@ -13,13 +15,16 @@ const Navlink = ({ href, children }: NavlinkProps) => {
   const router: NextRouter = useRouter();
 
   return (
-    <Navbar.Link
-      className="duration-200"
-      href={href}
-      active={router.asPath == href}
-    >
-      {children}
-    </Navbar.Link>
+    <>
+      <Link
+        className={`font-semibold hover:text-blue-400 duration-200 ${
+          router.asPath == href ? "text-blue-400" : "text-blue-800"
+        }`}
+        href={href}
+      >
+        {children}
+      </Link>
+    </>
   );
 };
 
@@ -37,7 +42,7 @@ export function Nav({}: Props) {
             className="mr-3 h-6 sm:h-9"
             alt="Flowbite Logo"
           /> */}
-          <span className="self-center whitespace-nowrap text-xl font-semibold text-blue-600">
+          <span className="self-center whitespace-nowrap text-xl font-semibold text-blue-500">
             CarShop
           </span>
         </Navbar.Brand>
